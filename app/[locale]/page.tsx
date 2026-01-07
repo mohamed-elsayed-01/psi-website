@@ -8,8 +8,6 @@ export default function HomePage() {
             <div className="">
                 <h1 className="text-2xl ">{t('title')}</h1>
                 <Button variant={"secondary"}>Button</Button>
-                <Button variant={"secondary"}>Button</Button>
-                <Button variant={"secondary"}>Button</Button>
             </div>
         </div>
     );
