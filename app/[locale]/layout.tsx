@@ -1,9 +1,11 @@
+import "@/styles/globals.css";
+
+import { Geist, Geist_Mono } from 'next/font/google';
+import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+
 import { routing } from '@/i18n/routing';
-import { Geist, Geist_Mono } from 'next/font/google';
-import "@/styles/globals.css";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -24,7 +26,7 @@ export default async function LocaleLayout({
 }) {
     const { locale } = await params;
 
-    if (!routing.locales.includes(locale as any)) {
+    if (!routing.locales.includes(locale as typeof routing.locales[number])) {
         notFound();
     }
 
